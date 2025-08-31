@@ -18,29 +18,32 @@ The system extracts text from the PDF, processes it, and provides answers to use
 
 ### 1️ Clone the repository
 ```bash
-git clone https://github.com/your-username/AI-Powered-PDF-Chat-System.git
+git clone https://github.com/Ankita5051/AI-Powered-PDF-Chat-System.git
 cd AI-Powered-PDF-Chat-System
+set-up Docker
 ```
 
 ### 2️ Install dependencies
 ```bash
 cd client
-npm install
+pnpm install
 cd ../server
-npm install
+pnpm install
 ```
 
 ### 3️ Setup environment
 Create a `.env` file inside `server/` and add:
 ```
 PORT=8000
-OPENAI_API_KEY=your_openai_api_key
+HUGGINGFACE_API_KEY=your_hf_api_key
 ```
 
 ### 4️ Run the backend
 ```bash
+docker compose up -d
 cd server
 pnpm dev
+pnpm dev:worker
 ```
 
 ### 5️ Run the frontend
